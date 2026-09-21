@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Professional To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <div>
+            <h1>My To-Do List</h1>
+            <p>Plan your tasks. Manage your time. Stay productive.</p>
+        </div>
+
+        <button id="notificationBtn" class="notification-btn">
+            🔔
+            <span id="notificationCount">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- Notifications -->
+
+    <div id="notificationPanel" class="notification-panel">
+
+        <div class="notification-header">
+
+            <strong>Notifications</strong>
+
+            <button id="closeNotifications">
+                ×
+            </button>
+
+        </div>
+
+        <div id="notificationList">
+
+            <p class="no-notification">
+                No new notifications
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Statistics -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+            <span id="totalCount">0</span>
+            <small>Total Tasks</small>
+        </div>
+
+        <div class="stat-card">
+            <span id="activeCount">0</span>
+            <small>Active</small>
+        </div>
+
+        <div class="stat-card">
+            <span id="completedCount">0</span>
+            <small>Completed</small>
+        </div>
+
+        <div class="stat-card">
+            <span id="expiredCount">0</span>
+            <small>Expired</small>
+        </div>
+
+    </section>
+
+
+    <!-- Add Task -->
+
+    <section class="add-task">
+
+        <div class="input-group task-input-group">
+
+            <label>Task</label>
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What do you need to do?"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>Priority</label>
+
+            <select id="priorityInput">
+
+                <option value="low">
+                    Low
+                </option>
+
+                <option value="medium" selected>
+                    Medium
+                </option>
+
+                <option value="high">
+                    High
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>Due Date</label>
+
+            <input
+                type="date"
+                id="dueDateInput"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>Due Time</label>
+
+            <input
+                type="time"
+                id="dueTimeInput"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>Expiry Date</label>
+
+            <input
+                type="date"
+                id="expiryDateInput"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>Expiry Time</label>
+
+            <input
+                type="time"
+                id="expiryTimeInput"
+            >
+
+        </div>
+
+
+        <button id="addBtn" class="add-btn">
+            + Add Task
+        </button>
+
+    </section>
+
+
+    <!-- Search and Filters -->
+
+    <section class="tools">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search your tasks..."
+        >
+
+
+        <div class="filters">
+
+            <button
+                class="filter active"
+                data-filter="all">
+                All
+            </button>
+
+            <button
+                class="filter"
+                data-filter="active">
+                Active
+            </button>
+
+            <button
+                class="filter"
+                data-filter="completed">
+                Completed
+            </button>
+
+            <button
+                class="filter"
+                data-filter="expired">
+                Expired
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Tasks -->
+
+    <section class="task-section">
+
+        <ul id="taskList"></ul>
+
+
+        <div id="emptyMessage" class="empty">
+
+            <div class="empty-icon">
+                📝
+            </div>
+
+            <h3>No tasks found</h3>
+
+            <p>
+                Add a task and start organizing your day.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <span id="remainingText">
+            0 tasks remaining
+        </span>
+
+
+        <div class="footer-actions">
+
+            <button id="clearCompleted">
+                Clear Completed
+            </button>
+
+            <button id="clearAll">
+                Clear All
+            </button>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
